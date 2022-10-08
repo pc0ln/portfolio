@@ -8,12 +8,13 @@ export default (req, res) => {
 
   sendgrid.send({
     to: process.env.GRID_RECEIVE_EMAIL,
-    from: body.email,
+    from: process.env.GRID_RECEIVE_EMAIL,
     subject: body.subject,
     text: body.message,
     html: `<div>
       <h1>hello from ${body.name} </h1>
       <p>${body.message}</p>
+      <p>reach back at ${body.email}</p>
     </div>`
   });
 
