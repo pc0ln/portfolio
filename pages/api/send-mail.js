@@ -7,7 +7,7 @@ export default (req, res) => {
   const body = JSON.parse(req.body);
 
   sendgrid.send({
-    to: 'pcoln.contact@gmail.com',
+    to: process.env.GRID_RECEIVE_EMAIL,
     from: body.email,
     subject: body.subject,
     text: body.message,
