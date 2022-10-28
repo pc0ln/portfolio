@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Profile from '../components/pfp'
-import Skills from '../components/skills'
-import {motion} from 'framer-motion'
 
 
 export default function Home() {

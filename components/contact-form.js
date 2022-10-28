@@ -24,7 +24,6 @@ export default function ContactForm() {
         setName("");
         setNumber("");
         setMessage("");
-        console.log(formData);
     };
 
     
