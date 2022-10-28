@@ -4,7 +4,7 @@ import React, { useState} from "react";
 export default function ContactForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
+    const [number, setNumber] = useState("");
     const [message, setMessage] = useState("");
     
     const handleSubmit = async (e) => {
@@ -22,40 +22,41 @@ export default function ContactForm() {
 
         setEmail("");
         setName("");
-        setSubject("");
+        setNumber("");
         setMessage("");
         console.log(formData);
     };
 
     
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="border-2">
-                <label htmlFor="name">Enter name:</label>
+        <form onSubmit={handleSubmit} className='border-2 border-slate-800 bg-slate-600 h-full col-span-2 text-slate-50'>
+            <div className="text-center select-none mt-1 mb-[-2px]">Fill out the form and send me a message</div>
+            <div className="flex flex-col items-center p-2 h-[15%]">
+                <label htmlFor="name" className="after:content-['*'] after:ml-0.5 after:text-red-600">Enter name:</label>
                 <input type='text' onChange={(e) => {
                     setName(e.target.value);
-                }} name="name" value={name}/>
+                }} name="name" value={name} className='rounded w-[75%] p-1 bg-slate-400' required/>
             </div>
-            <div className="border-2">
-                <label htmlFor="email">Enter email:</label>
-                <input type='text' onChange={(e) => {
+            <div className="flex flex-col items-center p-2 h-[15%]">
+                <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-600">Enter email:</label>
+                <input type='email' onChange={(e) => {
                     setEmail(e.target.value);
-                }} name="email" value={email}/>
+                }} name="email" value={email} className='rounded bg-slate-400 w-[75%] p-1' required/>
             </div>
-            <div className="border-2">
-                <label htmlFor="subject">Enter subject:</label>
+            <div className="flex flex-col items-center p-2 h-[15%]">
+                <label htmlFor="number">Enter phone number:</label>
                 <input type='text' onChange={(e) => {
-                    setSubject(e.target.value);
-                }} name="subject" value={subject}/>
+                    setNumber(e.target.value);
+                }} name="number" value={number} className='rounded bg-slate-400 w-[75%] p-1'/>
             </div>
-            <div className="border-2">
-                <label htmlFor="message">Enter message:</label>
+            <div className="flex flex-col items-center p-2 h-2/5 ">
+                <label htmlFor="message" className="after:content-['*'] after:ml-0.5 after:text-red-600">Enter message:</label>
                 <textarea onChange={(e) => {
                     setMessage(e.target.value);
-                }} name="message" value={message}></textarea>
+                }} name="message" value={message} className='mt-2 rounded bg-slate-400 resize-none w-[75%] h-full p-1' placeholder="Type your message here" required/>
             </div>
-            <div>
-                <button type="submit" className="border-2">send</button>
+            <div className="flex justify-center mt-2">
+                <button type="submit" className="bg-cyan-700 hover:bg-cyan-800 rounded-lg border-cyan-900 border-2 px-[3px] text-slate-100 w-[20%]">Send <img src='/mail-closed.svg' className=" inline h-5 w-5 pb-1"/></button>
             </div>
         </form>
     );

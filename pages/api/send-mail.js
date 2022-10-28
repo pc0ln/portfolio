@@ -9,12 +9,12 @@ export default (req, res) => {
   sendgrid.send({
     to: process.env.GRID_RECEIVE_EMAIL,
     from: process.env.GRID_RECEIVE_EMAIL,
-    subject: body.subject,
+    subject: `Contact from ${body.name}`,
     text: body.message,
     html: `<div>
       <h1>hello from ${body.name} </h1>
       <p>${body.message}</p>
-      <p>reach back at ${body.email}</p>
+      <p>reach back at ${body.email} or ${body.number.slice(0,3)}-${body.number.slice(3,6)}-${body.number.slice(6)} </p>
     </div>`
   });
 

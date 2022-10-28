@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { motion, useViewportScroll } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Navbar() {
     return (
@@ -17,7 +17,7 @@ export default function Navbar() {
         transition={{
             duration: .2,
         }}
-        className="w-full h-8 m-0 bg-slate-900 flex flex-row sticky top-0">
+        className="w-full h-8 m-0 bg-slate-900 flex flex-row sticky top-0 z-10">
             <Link href='/'>
                 <a className="w-1/3 text-center bg-slate-300 text-red-800 text-lg border-2 border-sky-800">
                     Home

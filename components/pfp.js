@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import pfp from '../public/pfp.jpg'
-import drown from '../public/drown.JPG'
 import {motion} from 'framer-motion'
 
 const Profile = () => {
@@ -17,9 +15,9 @@ const Profile = () => {
       transition={{
         duration:.5
       }}
-      className='border-2 border-red-600 flex justify-center w-60 mt-10 mx-auto'>
+      className='flex justify-center w-60 m-0'>
         <Image 
-          src={isSwitch ? drown:pfp}
+          src={isSwitch ? '/drown.JPG':'/pfp.jpg'}
           alt='picture of me'
           layout='fixed'
           height={200}
