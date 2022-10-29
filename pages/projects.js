@@ -1,4 +1,4 @@
-import ProjectCard from './/api/project-api'
+import ProjectCard from './api/project-api'
 
 export default function Projects() {
     return (
