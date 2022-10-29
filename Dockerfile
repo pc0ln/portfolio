@@ -25,9 +25,7 @@ RUN npm run build
 FROM node:16-alpine AS runner
 WORKDIR /app
 
-ENV GRID_API_KEY="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"
-ENV GRID_SEND_EMAIL = "contact@pcoln.me"
-ENV GRID_RECEIVE_EMAIL = "pcoln.contact@gmail.com"
+
 ENV NODE_ENV production
 
 RUN addgroup --system --gid 1001 nodejs
