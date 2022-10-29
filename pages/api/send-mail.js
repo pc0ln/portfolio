@@ -1,12 +1,9 @@
 import sendgrid from "@sendgrid/mail";
 
-sendgrid.setApiKey(process.env.GRID_API_KEY);
-
-
 export default (req, res) => {
+  sendgrid.setApiKey(process.env.GRID_API_KEY);
   const body = JSON.parse(req.body);
-
-  sendgrid.send({
+  const msg = {
     to: process.env.GRID_RECEIVE_EMAIL,
     from: process.env.GRID_SEND_EMAIL,
     subject: `Contact from ${body.name}`,
@@ -16,6 +13,14 @@ export default (req, res) => {
       <p>${body.message}</p>
       <p>reach back at ${body.email} or ${body.number.slice(0,3)}-${body.number.slice(3,6)}-${body.number.slice(6)} </p>
     </div>`
+  }
+
+  sendgrid.send(msg).then((response) => {
+    console.log(response[0].statusCode)
+    console.log('good')
+  })
+  .catch((error) => {
+    console.error(error)
   });
 
   res.status(200).json({ status: 'Ok'});
