@@ -38,7 +38,7 @@ export default function Home() {
         <div className='w-[85%] m-auto border-2 mt-4 rounded bg-slate-300 shadow-2xl shadow-slate-900'>
           <h2 className='block font-extrabold border-b-2 border-slate-500 text-center text-lg'>Skills</h2>
           <p className='text-center font-semibold md:text-lg'>•	Languages: JavaScript | Python | Java | C++</p>
-          <p className='text-center font-semibold md:text-lg'>•	Tech: React | React Native | NextJS | Redux | jQuery | NoSQL | MongoDB | REST API</p>
+          <p className='text-center font-semibold md:text-lg'>•	Tech: React | React Native | NextJS | Redux | jQuery | NoSQL | MongoDB | REST API | Docker | GCP</p>
 
         </div>
       </div>
